@@ -5,8 +5,8 @@ public static int solution(int n, int[] stations, int w) {
         int answer = 0;
 
         while (now <= n) {
-            // 현재 위치가 설치된 기지국의 범위보다 작거나, 이미 설치되어있는 기지국을 전부 넘어선 경우
-            if (now < stations[station] - w || stations.length <= station) {
+            // 현재 위치가 이미 설치되어있는 기지국을 전부 넘어섰거나, 설치된 기지국의 범위보다 작은 경우
+            if (stations.length <= station || now < stations[station] - w) {
                 // 새로운 기지국 설치 후
                 // 현재 위치를 기지국을 설치한 범위 밖으로 이동
                 answer++;
